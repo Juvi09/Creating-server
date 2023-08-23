@@ -1,9 +1,15 @@
-const http = require('http');
-const port = 3000;
+const http = require('http')
+const fs = require('fs')
+const port = 3000
 
-const server = http.createServer(function(req, res){
-    res.write('Hello Node');
-    res.end();
+const server = http.createServer(function(req, res) {
+    res.writeHead(200, {'Content-Type' : 'text/html'})
+    res.readFile('index.html', function(error, data){
+        if (r)
+    })
+
+    res.write('Hello Node')
+    res.end()
 
 });
 
