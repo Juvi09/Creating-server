@@ -4,17 +4,17 @@ const port = 3000
 
 const server = http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type' : 'text/html'})
-    res.readFile('index.html', function(error, data){
+    fs.readFile('index.html', function(error, data) {
         if (error) {
             res.writeHead(404);
-            res.write('Error: File Not Found')
+            res.write('Error: File Not Found!')
+        } else {
+            res.write(data)
         }
-    })
+        res.end()
+    })  
 
-    res.write('Hello Node')
-    res.end()
-
-});
+})
 
 server.listen(port, function(error){
     if (error) {
